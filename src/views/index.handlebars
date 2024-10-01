@@ -1,0 +1,26 @@
+<div class="container">
+    <header>
+        <img src="/static/img/logo_coderhouse.png" style="width: 350px;" alt="Logo de Coderhouse">
+        <h1>Hola {{firstName}}, {{lastName}} bienvenido!</h1>
+    </header>
+
+    <section>
+        <h2>Información del Usuario</h2>
+        <ul class="list-group">
+            <li class="list-group-item">Edad: {{age}}</li>
+            <li class="list-group-item">Email: {{email}}</li>
+            <li class="list-group-item">Teléfono: {{phone}}</li>
+        </ul>
+    </section>
+
+    {{#if isAdmin}}
+        <section>
+            <h2>Usuarios</h2>
+            <ul class="list-group">
+                {{#each users}}
+                    <li class="list-group-item">{{this.id}}, {{this.firstName}}, {{this.lastName}}</li>
+                {{/each}}
+            </ul>
+        </section>
+    {{/if}}
+</div>
